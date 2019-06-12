@@ -1,0 +1,34 @@
+[service]
+port = 12345
+ 
+[namespace]
+tensorflow = default
+ 
+[k8s]
+headless_port = 2222
+ 
+[image]
+#tensorflow = tf-1:5000/tf-dis:4.0
+#tensorflow = tensorflow = tf-1:5000/tf-dis:4.0
+tensorflow = k8s.gcr.io/tf-dis:4.0
+ 
+[redis]
+host = 127.0.0.1
+port = 30009
+running_set = running_uids
+success_set = success_uids
+
+[request]
+#hdfs_url = http://tf-1:14000/webhdfs/v1    #lenovo
+hdfs_url = http://192.168.0.55:14000/webhdfs/v1   #Lv
+hdfs_user = root
+timeout = 10
+
+[hdfs]
+#Lenovo
+#web = http://192.168.11.39:14000
+#namenode = hdfs://192.168.11.39
+
+#Lv
+web = http://192.168.0.55:14000
+namenode = hdfs://192.168.0.55
